@@ -7,31 +7,31 @@ function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [redirect, setRedirect] = useState(false);
-    const {setUser} = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
-    function handleEmailChange(event){
+    function handleEmailChange(event) {
         setEmail(event.target.value);
     }
 
-    function handlePasswordChange(event){
+    function handlePasswordChange(event) {
         setPassword(event.target.value);
     }
 
-    async function handleLoginSubmit(event){
+    async function handleLoginSubmit(event) {
         event.preventDefault();
-        try{
-            const {data} = await axios.post("/login", {email, password});
+        try {
+            const { data } = await axios.post("/login", { email, password });
             setUser(data);
             alert("Login Successful.");
             setRedirect(true);
-        } catch(error){
+        } catch (error) {
             console.log(error);
             alert("Login Failed!");
         }
     }
 
-    if(redirect){
-        return <Navigate to={"/"} /> ;
+    if (redirect) {
+        return <Navigate to={"/"} />;
     }
 
     return <div className="mt-4 grow flex items-center justify-around">
@@ -45,6 +45,11 @@ function LoginPage() {
                     Don't have an account yet? <Link className="underline text-black" to='/register'>Register Now </Link>
                 </div>
             </form>
+            <div className="text-center py-2 text-gray-500">
+                Demo credentials- <br />
+                Email:<span className="text-black"> test@email.com </span>
+                Password:<span className="text-black"> Test@123 </span>
+            </div>
         </div>
     </div>;
 }
