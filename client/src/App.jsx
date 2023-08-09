@@ -12,7 +12,7 @@ import PlacesFormPage from './pages/PlacesFormPage';
 import PlacePage from './pages/PlacePage';
 import BookingsPage from './pages/BookingsPage';
 
-axios.defaults.baseURL = "https://wild-teal-butterfly-garb.cyclic.app";
+axios.defaults.baseURL = "https://airbnbcloneapi.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
