@@ -16,8 +16,8 @@ function ProfilePage() {
 
     async function logout() {
         await axios.post("/logout");
-        setRedirect(true);
         setUser(null);
+        setRedirect(true);
     }
 
     if (redirect) {

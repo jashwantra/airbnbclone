@@ -85,7 +85,7 @@ app.get("/profile", function (req, res) {
 });
 
 app.post("/logout", function (req, res) {
-    res.cookie('token', '').json(true);
+    res.cookie('token', '',{ secure: true, sameSite: "none" }).json(true);
 });
 
 app.post("/upload-by-link", async function (req, res) {
