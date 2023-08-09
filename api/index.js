@@ -230,6 +230,6 @@ app.get("/bookings", async function (req, res) {
     }
 });
 
-app.listen(4000, function () {
-    console.log("Server started on PORT 4000.");
+app.listen(process.env.PORT || 4000, function () {
+    console.log(`Server started on port ${process.env.PORT}.`);
 });
