@@ -47,7 +47,7 @@ function PlacePage() {
                     </div>
                     {place?.photos?.length > 0 && place.photos.map((photo) => {
                         return (<div key={photo}>
-                            <img src={`http://localhost:4000/uploads/${photo}`} alt="" />
+                            <img src={`https://airbnbcloneapi.onrender.com/uploads/${photo}`} alt="" />
                         </div>)
                     })}
                 </div>
@@ -76,7 +76,7 @@ function PlacePage() {
                             <div>
                                 <img onClick={() => { setShowAllPhotos(true) }}
                                     className="cursor-pointer aspect-square object-cover"
-                                    src={`http://localhost:4000/uploads/${place.photos?.[0]}`} alt="" />
+                                    src={`https://airbnbcloneapi.onrender.com/uploads/${place.photos?.[0]}`} alt="" />
                             </div>
                         )}
                     </div>
@@ -84,13 +84,13 @@ function PlacePage() {
                         {place.photos?.[1] && (
                             <img onClick={() => { setShowAllPhotos(true) }}
                                 className="cursor-pointer aspect-square object-cover"
-                                src={`http://localhost:4000/uploads/${place.photos?.[1]}`} alt="" />
+                                src={`https://airbnbcloneapi.onrender.com/uploads/${place.photos?.[1]}`} alt="" />
                         )}
                         <div className="overflow-hidden">
                             {place.photos?.[2] && (
                                 <img onClick={() => { setShowAllPhotos(true) }}
                                     className="cursor-pointer aspect-square object-cover relative top-2"
-                                    src={`http://localhost:4000/uploads/${place.photos?.[2]}`} alt="" />
+                                    src={`https://airbnbcloneapi.onrender.com/uploads/${place.photos?.[2]}`} alt="" />
                             )}
                         </div>
                     </div>
