@@ -26,7 +26,17 @@ app.use(cors({
     origin: ["http://localhost:3000", "http://192.168.1.17:3000"],
 }));
 
-mongoose.connect(process.env.MONGO_URL);
+// mongoose.connect(process.env.MONGO_URL);
+
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGO_URL);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+  }
 
 app.get("/test", function (req, res) {
     res.json('test ok');
@@ -230,6 +240,8 @@ app.get("/bookings", async function (req, res) {
     }
 });
 
-app.listen(process.env.PORT || 4000, function () {
-    console.log(`Server started on port ${process.env.PORT}.`);
-});
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
+})
