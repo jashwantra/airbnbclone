@@ -8,7 +8,7 @@ function PlaceImg({place, index=0, className=null}){
         className = "object-cover";
     }
     return (
-            <img className={className} src={"https://airbnbcloneapi.onrender.com/uploads/" + place.photos[index]} alt={place.title} />
+            <img className={className} src={place.photos[index]} alt={place.title} />
     );
 }
 

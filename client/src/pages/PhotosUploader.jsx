@@ -59,7 +59,7 @@ function PhotosUploader({ addedPhotos, setAddedPhotos }) {
             {addedPhotos.length > 0 && addedPhotos.map(link => (
                 <div key={link} className="h-32 flex relative">
                     <img className="rounded-2xl w-full object-cover"
-                        src={"https://airbnbcloneapi.onrender.com/uploads/" + link} alt="" />
+                        src={link} alt="" />
                     <button onClick={(event) => removePhoto(event, link)} className="cursor-pointer absolute bottom-1 right-1 text-white bg-black bg-opacity-50 rounded-2xl p-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
