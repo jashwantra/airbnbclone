@@ -25,7 +25,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://192.168.1.17:3000"],
+    origin: ["http://localhost:3000", "https://airbnbclone-beta-fawn.vercel.app"],
 }));
 
 // mongoose.connect(process.env.MONGO_URL);
